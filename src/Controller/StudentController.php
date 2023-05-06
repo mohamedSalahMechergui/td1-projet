@@ -45,4 +45,14 @@ class StudentController extends AbstractController
             ]
         );
     }
+    #[Route('/student/{id}', name:'detail_Student')]
+    public function getSudents(StudentRepository $repo, $id):Response {
+        $student = $repo->find($id);
+        return $this ->render(
+            'student/getStudent.html.twig',
+            [
+                'student' => $student
+            ]
+        );
+    }
 }

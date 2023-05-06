@@ -1,19 +1,25 @@
-<table>
+<table border="2">
     <tr>
-        <th>Id</th>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th> Id </th>
+        <th> First Name </th>
+        <th> Last Name </th>
+        <th> Email </th>
     </tr>
+
     {% for student in students %}
         <tr>
             <td>
-                {{ student.id }}
+                {{student.Id}}
+
             </td>
             <td>
-                {{ student.firstName }}
+                {{student.firstName}}
             </td>
             <td>
-                {{ student.lastName }}
+                {{student.lastName}}
+            </td>
+            <td>
+                <a href="{{path ('detail_Student',{'id': student.id})}}">detail Student</a>
             </td>
         </tr>
     {% endfor %}
